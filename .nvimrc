@@ -128,6 +128,7 @@ end
 require'lspconfig'.clangd.setup {
     cmd = { "clangd", "--background-index", "-j=12", "--pch-storage=memory", "--limit-results=0", "--header-insertion=never", "--all-scopes-completion=false" },
     on_attach = on_attach,
+    filetypes = { "c", "cpp", "objc", "objcpp", "cu", "cxx", "cc" },
     flags = {
       debounce_text_changes = 150,
     }
