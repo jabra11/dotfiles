@@ -51,6 +51,7 @@ fg("TSString", "#ff8700")
 fg("TSComment", "#00af5f")
 fg("TSRepeat", "#c678dd")
 fg("TSNumber", "#00af00")
+fg("TSBoolean", "#00af00")
 
 -- blankline
 fg("IndentBlanklineChar", line)
