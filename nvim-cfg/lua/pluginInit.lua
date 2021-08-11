@@ -38,7 +38,8 @@ return require("packer").startup(
 
         -- color related stuff
         use {
-            "siduck76/nvim-base16.lua",
+            "jabra98/nvim-base16.lua",
+            commit = "91dac294cebd9f4fc9ee162e64d30d0aa4e18d53",
             after = "packer.nvim",
             config = function()
                 require "theme"
