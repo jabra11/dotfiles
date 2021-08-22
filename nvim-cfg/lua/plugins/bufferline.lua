@@ -22,7 +22,8 @@ bufferline.setup {
         view = "multiwindow",
         show_buffer_close_icons = true,
         separator_style = "thin",
-        mappings = true,
+        -- removed due to d343bc322e00e9b21bcb9b3c8bf6a989b64a92a2
+        --mappings = true,
         always_show_bufferline = true
     },
     highlights = {
