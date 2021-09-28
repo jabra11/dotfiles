@@ -38,7 +38,7 @@ end
 -- map buffer local keybindings when the language server attaches
 
 require'lspconfig'.clangd.setup {
-    cmd = { "/opt/llvm-project-13.0.0-rc1/bin/clangd", "-j=8", "--pch-storage=memory", "--limit-results=100", "--header-insertion=never", 
+    cmd = { "clangd", "-j=8", "--pch-storage=memory", "--limit-results=100", "--header-insertion=never", 
         "--all-scopes-completion=false", "--background-index", "--clang-tidy"},
     on_attach = on_attach,
     filetypes = { "c", "cpp", "objc", "objcpp", "cu", "cxx", "mxx", "cc" },
