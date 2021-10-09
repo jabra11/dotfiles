@@ -17,7 +17,8 @@ return require("packer").startup(
         }
 
         use {
-            "tpope/vim-dispatch"
+            "tpope/vim-dispatch",
+            commit = "c88f1b1e4fd428d826fa38c272ed80b6518d37eb"
         }
 
         use {
