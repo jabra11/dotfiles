@@ -52,17 +52,16 @@ g.nvim_tree_icons = {
 }
 
 nvimtree.setup {
-   lsp_diagnostics = false,
    disable_netrw = true,
    hijack_netrw = true,
    ignore_ft_on_setup = { "dashboard" },
    auto_close = false,
    open_on_tab = false,
    hijack_cursor = true,
-   update_cwd = true,
+   update_cwd = false,
    update_focused_file = {
       enable = true,
-      update_cwd = true,
+      update_cwd = false,
    },
    view = {
       allow_resize = true,
