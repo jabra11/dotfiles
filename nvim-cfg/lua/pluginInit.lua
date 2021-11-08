@@ -72,6 +72,12 @@ return require("packer").startup(
         ---- file managing , picker etc
         use {
             "kyazdani42/nvim-tree.lua",
+            -- freeze for now due to them changing
+            -- a lot of internal stuff (date now 2021-11-08)
+            --
+            -- should probably be put back to fetch upstream in
+            -- a few months or so
+            commit = "6cadd3a9d7202524648d5fcbf5e6da9ddd32cd19",
             cmd = "NvimTreeToggle",
             config = function()
                 require "plugins.nvimtree"
