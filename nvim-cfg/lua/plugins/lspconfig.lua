@@ -3,7 +3,7 @@ local nvim_lsp = require('lspconfig')
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  require('completion').on_attach()
+--  require('completion').on_attach()
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -41,6 +41,7 @@ require'lspconfig'.clangd.setup {
     cmd = { "clangd", "-j=12", "--pch-storage=memory", "--limit-results=100", "--header-insertion=never", 
         "--all-scopes-completion=false", "--background-index", "--clang-tidy"},
     on_attach = on_attach,
+    capabilities = capabilities,
     filetypes = { "c", "cpp", "objc", "objcpp", "cu", "cxx", "mxx", "cc" },
     flags = {
       debounce_text_changes = 150,
@@ -49,6 +50,7 @@ require'lspconfig'.clangd.setup {
 
 require'lspconfig'.jdtls.setup {
     cmd = { "jdtls" },
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
@@ -58,8 +60,11 @@ require'lspconfig'.jdtls.setup {
 local servers = { "pyright", "rust_analyzer", "tsserver", "texlab", "cmake",
                   "hls", "gopls"}
 
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,

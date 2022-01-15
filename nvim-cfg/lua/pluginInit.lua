@@ -23,7 +23,9 @@ return require("packer").startup(
         }
 
         use {
-            "glepnir/galaxyline.nvim",
+            --"glepnir/galaxyline.nvim",
+            -- change upstream to maintained fork
+            "NTBBloodbath/galaxyline.nvim",
             after = "nvim-base16.lua",
             config = function()
                 require "plugins.statusline"
@@ -49,8 +51,44 @@ return require("packer").startup(
             end
         }
 
+        --use {
+        --    "nvim-lua/completion-nvim"
+        --}
+
         use {
-            "nvim-lua/completion-nvim"
+            'hrsh7th/cmp-nvim-lsp'
+        }
+
+        use {
+            'hrsh7th/cmp-buffer'
+        }
+
+        use {
+            'hrsh7th/cmp-path'
+        }
+
+        use {
+            'hrsh7th/cmp-cmdline'
+        }
+
+        use {
+            'hrsh7th/nvim-cmp',
+            config = function()
+                require "plugins.nvim-cmp"
+            end
+        }
+
+        --" Plug 'L3MON4D3/LuaSnip'
+        --" Plug 'saadparwaiz1/cmp_luasnip'
+
+        use {
+            --'hrsh7th/cmp-vsnip'
+            'saadparwaiz1/cmp_luasnip'
+        }
+
+        use {
+            'L3MON4D3/LuaSnip'
+            --'hrsh7th/vim-vsnip'
         }
 
         use {
@@ -59,7 +97,6 @@ return require("packer").startup(
                 require "plugins.lspconfig"
             end
         }
-
 
         use {
             "onsails/lspkind-nvim",
