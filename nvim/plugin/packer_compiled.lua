@@ -113,7 +113,7 @@ _G.packer_plugins = {
     loaded = true,
     needs_bufread = false,
     path = "/home/joerg/.local/share/nvim/site/pack/packer/opt/galaxyline.nvim",
-    url = "https://github.com/glepnir/galaxyline.nvim"
+    url = "https://github.com/NTBBloodbath/galaxyline.nvim"
   },
   ["lspkind-nvim"] = {
     config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugins.lspkind\frequire\0" },
@@ -122,7 +122,7 @@ _G.packer_plugins = {
     url = "https://github.com/onsails/lspkind-nvim"
   },
   ["nvim-base16.lua"] = {
-    after = { "nvim-web-devicons", "galaxyline.nvim", "bufferline.nvim" },
+    after = { "galaxyline.nvim", "nvim-web-devicons", "bufferline.nvim" },
     config = { "\27LJ\1\2%\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\ntheme\frequire\0" },
     load_after = {},
     loaded = true,
@@ -183,6 +183,11 @@ _G.packer_plugins = {
     path = "/home/joerg/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/home/joerg/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
+  },
   ["telescope.nvim"] = {
     commands = { "Telescope" },
     config = { "\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22plugins.telescope\frequire\0" },
@@ -224,13 +229,16 @@ try_loadstring("\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22plugi
 time([[Config for nvim-lspconfig]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd popup.nvim ]]
-vim.cmd [[ packadd plenary.nvim ]]
 vim.cmd [[ packadd packer.nvim ]]
 vim.cmd [[ packadd nvim-base16.lua ]]
 
 -- Config for: nvim-base16.lua
 try_loadstring("\27LJ\1\2%\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\ntheme\frequire\0", "config", "nvim-base16.lua")
+
+vim.cmd [[ packadd nvim-web-devicons ]]
+
+-- Config for: nvim-web-devicons
+try_loadstring("\27LJ\1\2-\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\18plugins.icons\frequire\0", "config", "nvim-web-devicons")
 
 vim.cmd [[ packadd bufferline.nvim ]]
 
@@ -242,11 +250,8 @@ vim.cmd [[ packadd galaxyline.nvim ]]
 -- Config for: galaxyline.nvim
 try_loadstring("\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23plugins.statusline\frequire\0", "config", "galaxyline.nvim")
 
-vim.cmd [[ packadd nvim-web-devicons ]]
-
--- Config for: nvim-web-devicons
-try_loadstring("\27LJ\1\2-\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\18plugins.icons\frequire\0", "config", "nvim-web-devicons")
-
+vim.cmd [[ packadd popup.nvim ]]
+vim.cmd [[ packadd plenary.nvim ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads

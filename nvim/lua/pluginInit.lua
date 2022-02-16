@@ -51,10 +51,6 @@ return require("packer").startup(
             end
         }
 
-        --use {
-        --    "nvim-lua/completion-nvim"
-        --}
-
         use {
             'hrsh7th/cmp-nvim-lsp'
         }
@@ -99,6 +95,10 @@ return require("packer").startup(
         }
 
         use {
+            "https://github.com/simrat39/symbols-outline.nvim"
+        }
+
+        use {
             "onsails/lspkind-nvim",
             --event = "BufEnter",
             config = function()
@@ -114,7 +114,8 @@ return require("packer").startup(
             --
             -- should probably be put back to fetch upstream in
             -- a few months or so
-            commit = "6cadd3a9d7202524648d5fcbf5e6da9ddd32cd19",
+            --commit = "6cadd3a9d7202524648d5fcbf5e6da9ddd32cd19",
+            -- 2022-02-06, put back to upstream
             cmd = "NvimTreeToggle",
             config = function()
                 require "plugins.nvimtree"
