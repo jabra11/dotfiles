@@ -12,5 +12,5 @@ map("n", "<C-n>", ":NvimTreeToggle<CR>", opt)
 map("n", "<C-P>", ":Telescope find_files<cr>", opt)
 map("n", "<C-l>", ":Telescope live_grep<cr>", opt)
 
-map("n", "<C-b>", ":Start! x-terminal-emulator -e python ~/scripts/vim/config_select.py build<CR>", opt)
-map("n", "<F5>", ":Start! x-terminal-emulator -e python ~/scripts/vim/config_select.py execute<CR>", opt)
+map("n", "<C-b>", ":Spawn! x-terminal-emulator -e python ~/scripts/vim/config_select.py build <CR>", opt)
+map("n", "<F5>", ":Spawn! x-terminal-emulator -e python ~/scripts/vim/config_select.py execute <CR>", opt)
