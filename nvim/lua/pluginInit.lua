@@ -50,7 +50,7 @@ return require("packer").startup(
                 require "plugins.treesitter"
             end
         }
-
+        
         use {
             'hrsh7th/cmp-nvim-lsp'
         }
@@ -91,6 +91,13 @@ return require("packer").startup(
             "neovim/nvim-lspconfig",
             config = function()
                 require "plugins.lspconfig"
+            end
+        }
+
+        use {
+            "ray-x/lsp_signature.nvim",
+            config = function()
+                require "plugins.lsp_signature"
             end
         }
 
